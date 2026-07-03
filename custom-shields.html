@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Shields — Pablo Leather Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bevan&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --panel: #151513;
+    --gold: #d4af37;
+    --gold-dim: #8f7526;
+    --red: #ab2328;
+    --navy: #2c3560;
+    --cream: #f0e9da;
+    --muted: #a89f8c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+  .flag-rule {
+    height: 4px;
+    background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--cream) 40px 42px, var(--navy) 42px 82px, var(--cream) 82px 84px);
+    opacity: 0.85;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 60px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .wordmark {
+    font-family: 'Alex Brush', cursive;
+    font-size: 34px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 34px;
+    opacity: 0.75;
+    font-weight: 400;
+  }
+  nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+  .page-hero {
+    padding: 70px 60px 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Bevan', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .body-copy {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .body-copy b { color: var(--cream); font-weight: 400; }
+  .form-frame {
+    max-width: 760px;
+    margin: 50px auto 90px;
+    padding: 4px;
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+  }
+  .form-frame iframe {
+    display: block;
+    width: 100%;
+    height: 1500px;
+    border: none;
+    background: #fff;
+  }
+  footer {
+    text-align: center;
+    padding: 34px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--gold-dim);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="flag-rule"></div>
+  <header>
+    <a class="wordmark" href="index.html">Pablo Leather</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work-order.html">Work order</a>
+      <a href="helmet-conversions.html">Conversions</a>
+      <a href="custom-shields.html" class="active">Shields</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="kicker">Custom shields</div>
+    <h1>Hand-crafted leather shields, built to your department's spec.</h1>
+    <p class="body-copy">
+      Every shield is hand-cut and finished to order. Choose a package — <b>Basic</b>, <b>Custom</b>, or
+      <b>Premium</b> — and add on any of the following: custom shape upgrade, reflective trim, gold/silver
+      accents, or a name panel. Shields carry your department or company name, plus whatever text and numbers
+      you need — company number, rank, last name, and more. Not sure which package fits? Pick "Not sure yet"
+      and I'll follow up. Submit a shield order with the details and any reference images, and I'll follow up
+      to confirm design, color, and price before starting.
+    </p>
+  </section>
+
+  <div class="form-frame">
+    <iframe src="https://docs.google.com/forms/d/1LZqQJOXm_QgmRUX97XHIulpGFwCMj2DHXlQr89vQ9d0/viewform?embedded=true">Loading…</iframe>
+  </div>
+
+  <div class="flag-rule"></div>
+  <footer>
+    Email: <a href="mailto:ryan@pabloleather.com">ryan@pabloleather.com</a> &nbsp;·&nbsp;
+    Instagram: <a href="https://instagram.com/pablo.leather.co">@pablo.leather.co</a> &nbsp;·&nbsp;
+    A phone number is shared after we've talked through your order.
+  </footer>
+</body>
+</html>

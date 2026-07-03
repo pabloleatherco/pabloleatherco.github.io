@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helmet Conversions — Pablo Leather Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bevan&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --panel: #151513;
+    --gold: #d4af37;
+    --gold-dim: #8f7526;
+    --red: #ab2328;
+    --navy: #2c3560;
+    --cream: #f0e9da;
+    --muted: #a89f8c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+  .flag-rule {
+    height: 4px;
+    background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--cream) 40px 42px, var(--navy) 42px 82px, var(--cream) 82px 84px);
+    opacity: 0.85;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 60px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .wordmark {
+    font-family: 'Alex Brush', cursive;
+    font-size: 34px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 34px;
+    opacity: 0.75;
+    font-weight: 400;
+  }
+  nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+  .page-hero {
+    padding: 70px 60px 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Bevan', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .body-copy {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .body-copy b { color: var(--cream); font-weight: 400; }
+  .notice {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--red);
+    background: var(--panel);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .form-frame {
+    max-width: 760px;
+    margin: 50px auto 90px;
+    padding: 4px;
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+  }
+  .form-frame iframe {
+    display: block;
+    width: 100%;
+    height: 1200px;
+    border: none;
+    background: #fff;
+  }
+  footer {
+    text-align: center;
+    padding: 34px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--gold-dim);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="flag-rule"></div>
+  <header>
+    <a class="wordmark" href="index.html">Pablo Leather</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work-order.html">Work order</a>
+      <a href="helmet-conversions.html" class="active">Conversions</a>
+      <a href="custom-shields.html">Shields</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="kicker">Helmet conversions</div>
+    <h1>Convert your helmet's brass band to the style you want.</h1>
+    <p class="body-copy">
+      A conversion changes how your helmet's brass hardware is built rather than just repairing what's there.
+      Choose a package — <b>Basic Brass Band Conversion</b>, <b>Custom Conversion</b>, or <b>Premium New Build</b> —
+      or pick "Not sure — need advice" and I'll help you land on the right one. Submit a conversion order below
+      with a photo of your current helmet and, if you have one, a reference photo of the style you're after.
+    </p>
+    <div class="notice">
+      One note up front: if your helmet is OSHA-compliant, it can't be converted to NFPA compliance after the
+      fact — that rating is fixed at original certification. I'll flag this during review if it applies to your
+      order, but it helps to know going in.
+    </div>
+  </section>
+
+  <div class="form-frame">
+    <iframe src="https://docs.google.com/forms/d/1unYGV93CT4JsJYkD8gRHaaN9J84QGzNodvD7GVnR-Lc/viewform?embedded=true">Loading…</iframe>
+  </div>
+
+  <div class="flag-rule"></div>
+  <footer>
+    Email: <a href="mailto:ryan@pabloleather.com">ryan@pabloleather.com</a> &nbsp;·&nbsp;
+    Instagram: <a href="https://instagram.com/pablo.leather.co">@pablo.leather.co</a> &nbsp;·&nbsp;
+    A phone number is shared after we've talked through your order.
+  </footer>
+</body>
+</html>

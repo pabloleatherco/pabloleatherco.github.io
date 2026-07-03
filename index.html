@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo Leather Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bevan&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --panel: #151513;
+    --gold: #d4af37;
+    --gold-dim: #8f7526;
+    --red: #ab2328;
+    --navy: #2c3560;
+    --cream: #f0e9da;
+    --muted: #a89f8c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+  .flag-rule {
+    height: 4px;
+    background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--cream) 40px 42px, var(--navy) 42px 82px, var(--cream) 82px 84px);
+    opacity: 0.85;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 60px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .wordmark {
+    font-family: 'Alex Brush', cursive;
+    font-size: 34px;
+    color: var(--gold);
+  }
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 34px;
+    opacity: 0.75;
+    font-weight: 400;
+  }
+  nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+  .hero {
+    text-align: center;
+    padding: 90px 40px 70px;
+  }
+  .badge {
+    width: 200px;
+    height: 240px;
+    margin: 0 auto 40px;
+    border: 2px solid var(--gold);
+    border-radius: 50% 50% 8% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--panel);
+    box-shadow: 0 0 0 6px var(--black), 0 0 0 7px var(--gold-dim);
+  }
+  .badge span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 20px;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Bevan', serif;
+    font-size: 54px;
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 22px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+  }
+  h1 em { font-style: normal; color: var(--red); }
+  .sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 42px;
+    line-height: 1.7;
+  }
+  .cta {
+    display: inline-block;
+    padding: 16px 42px;
+    background: var(--red);
+    color: var(--cream);
+    font-family: 'Bevan', serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid var(--gold-dim);
+  }
+  .tiles {
+    display: flex;
+    gap: 1px;
+    background: var(--gold-dim);
+    margin-top: 60px;
+  }
+  .tile {
+    flex: 1;
+    background: var(--panel);
+    padding: 50px 36px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .tile:hover { background: #1c1c19; }
+  .tile h3 {
+    font-family: 'Bevan', serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .tile p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  footer {
+    text-align: center;
+    padding: 34px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--gold-dim);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="flag-rule"></div>
+  <header>
+    <div class="wordmark">Pablo Leather</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="work-order.html">Work order</a>
+      <a href="helmet-conversions.html">Conversions</a>
+      <a href="custom-shields.html">Shields</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge"><span>Your logo here — drop pablo-leather-logo.png in this spot</span></div>
+    <div class="kicker">Fire service leatherwork &nbsp;·&nbsp; Handcrafted since day one</div>
+    <h1>Built by hand.<br>Worn <em>on duty</em>.</h1>
+    <p class="sub">Traditional leather work for fire helmets — repairs, brass band conversions, and hand-cut shields, made the way it's always been done.</p>
+    <a class="cta" href="work-order.html">Submit an order</a>
+  </section>
+
+  <section class="tiles">
+    <a class="tile" href="work-order.html">
+      <h3>Work order</h3>
+      <p>Repairs, reconditioning, and chinstraps for your current helmet.</p>
+    </a>
+    <a class="tile" href="helmet-conversions.html">
+      <h3>Helmet conversions</h3>
+      <p>Brass band conversions, Basic to Premium New Build.</p>
+    </a>
+    <a class="tile" href="custom-shields.html">
+      <h3>Custom shields</h3>
+      <p>Hand-cut, hand-painted leather shields.</p>
+    </a>
+  </section>
+
+  <div class="flag-rule"></div>
+  <footer>
+    Email: <a href="mailto:ryan@pabloleather.com">ryan@pabloleather.com</a> &nbsp;·&nbsp;
+    Instagram: <a href="https://instagram.com/pablo.leather.co">@pablo.leather.co</a> &nbsp;·&nbsp;
+    A phone number is shared after we've talked through your order.
+  </footer>
+</body>
+</html>
