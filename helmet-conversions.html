@@ -102,6 +102,41 @@
     border: none;
     background: #fff;
   }
+  .gallery-section {
+    max-width: 900px;
+    margin: 10px auto 0;
+    padding: 0 60px;
+  }
+  .gallery-kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 26px;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .gallery a {
+    display: block;
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+    padding: 4px;
+    line-height: 0;
+  }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  @media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+    .gallery-section { padding: 0 24px; }
+  }
   footer {
     text-align: center;
     padding: 34px;
@@ -138,6 +173,16 @@
       One note up front: if your helmet is OSHA-compliant, it can't be converted to NFPA compliance after the
       fact — that rating is fixed at original certification. I'll flag this during review if it applies to your
       order, but it helps to know going in.
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="gallery-kicker">Recent conversions</div>
+    <div class="gallery">
+      <a href="photos/conversion-1.jpg" target="_blank"><img src="photos/conversion-1.jpg" alt="Converted fire helmet, black leather with custom eagle emblem"></a>
+      <a href="photos/conversion-2.jpg" target="_blank"><img src="photos/conversion-2.jpg" alt="Converted fire helmet, glossy black finish on display stand"></a>
+      <a href="photos/conversion-3.jpg" target="_blank"><img src="photos/conversion-3.jpg" alt="Converted fire helmet, red with San Diego department shield"></a>
+      <a href="photos/conversion-4.jpg" target="_blank"><img src="photos/conversion-4.jpg" alt="Two converted helmets showing new brass band and headliner interior"></a>
     </div>
   </section>
 
