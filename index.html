@@ -175,6 +175,24 @@
     line-height: 1.6;
     font-weight: 300;
   }
+  .insta-section {
+    max-width: 900px;
+    margin: 70px auto 0;
+    padding: 0 60px;
+    text-align: center;
+  }
+  .insta-kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 26px;
+  }
+  .insta-frame {
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+    padding: 4px;
+  }
   footer {
     text-align: center;
     padding: 34px;
@@ -185,6 +203,7 @@
   }
   footer a { color: var(--gold); text-decoration: none; }
   @media (max-width: 700px) {
+    .insta-section { padding: 0 24px; }
     header { flex-direction: column; align-items: center; gap: 14px; padding: 20px 24px; }
     .wordmark { font-size: 32px; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
@@ -209,6 +228,7 @@
       <a href="helmet-conversions.html">Conversions</a>
       <a href="custom-shields.html">Shields</a>
       <a href="pricing.html">Pricing</a>
+      <a href="gallery.html">Gallery</a>
     </nav>
   </header>
 
@@ -240,6 +260,15 @@
       <h3>Custom shields</h3>
       <p>Hand-cut, hand-painted leather shields.</p>
     </a>
+  </section>
+
+  <section class="insta-section">
+    <div class="insta-kicker">Follow along @pablo.leather.co</div>
+    <div class="insta-frame">
+      <!-- Elfsight Instagram Feed | Home Slider -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-4efae938-ed04-4003-98be-cc6d40475042" data-elfsight-app-lazy></div>
+    </div>
   </section>
 
   <div class="flag-rule"></div>

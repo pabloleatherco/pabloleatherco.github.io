@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom Shields — Pablo Leather Co.</title>
+<title>Gallery — Pablo Leather Co.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bevan&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
@@ -49,15 +49,16 @@
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-left: 34px;
+    margin-left: 30px;
     opacity: 0.75;
     font-weight: 400;
   }
   nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
   .page-hero {
     padding: 70px 60px 20px;
-    max-width: 760px;
+    max-width: 900px;
     margin: 0 auto;
+    text-align: center;
   }
   .kicker {
     font-size: 13px;
@@ -77,21 +78,18 @@
     font-weight: 300;
     color: var(--muted);
     line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto;
   }
-  .body-copy b { color: var(--cream); font-weight: 400; }
-  .form-frame {
-    max-width: 760px;
+  .insta-wrap {
+    max-width: 1000px;
     margin: 50px auto 90px;
-    padding: 4px;
+    padding: 0 60px;
+  }
+  .insta-frame {
     border: 1px solid var(--gold-dim);
     background: var(--panel);
-  }
-  .form-frame iframe {
-    display: block;
-    width: 100%;
-    height: 1650px;
-    border: none;
-    background: #fff;
+    padding: 4px;
   }
   footer {
     text-align: center;
@@ -108,6 +106,7 @@
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 10px; }
     .page-hero { padding: 50px 24px 20px; }
+    .insta-wrap { padding: 0 24px; }
     h1 { font-size: 32px; }
   }
 </style>
@@ -120,27 +119,28 @@
       <a href="index.html">Home</a>
       <a href="work-order.html">Helmet restoration</a>
       <a href="helmet-conversions.html">Conversions</a>
-      <a href="custom-shields.html" class="active">Shields</a>
+      <a href="custom-shields.html">Shields</a>
       <a href="pricing.html">Pricing</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="gallery.html" class="active">Gallery</a>
     </nav>
   </header>
 
   <section class="page-hero">
-    <div class="kicker">Custom shields</div>
-    <h1>100% hand crafted shields from start to finish</h1>
+    <div class="kicker">Gallery</div>
+    <h1>Straight from the shop floor</h1>
     <p class="body-copy">
-      Every shield is hand-cut and finished to order. Choose a package — <b>Basic</b>, <b>Custom</b>, or
-      <b>Premium</b> — and add on any of the following: custom shape upgrade, reflective trim, gold/silver
-      accents, or a name panel. Shields carry your department or company name, plus whatever text and numbers
-      you need — company number, rank, last name, and more. Not sure which package fits? Pick "Not sure yet"
-      and I'll follow up. Submit a shield order with the details and any reference images, and I'll follow up
-      to confirm design, color, and price before starting.
+      A running look at finished helmets, conversions, and shields — pulled live from
+      <a href="https://instagram.com/pablo.leather.co" style="color: var(--gold); text-decoration: none;">@pablo.leather.co</a>.
+      New work shows up here as it's posted.
     </p>
   </section>
 
-  <div class="form-frame">
-    <iframe src="https://tally.so/embed/5B5Xqv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1">Loading…</iframe>
+  <div class="insta-wrap">
+    <div class="insta-frame">
+      <!-- Elfsight Instagram Feed | Home Slider -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-4efae938-ed04-4003-98be-cc6d40475042" data-elfsight-app-lazy></div>
+    </div>
   </div>
 
   <div class="flag-rule"></div>
