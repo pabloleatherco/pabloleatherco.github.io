@@ -116,26 +116,36 @@
     margin-bottom: 26px;
   }
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .gallery a {
-    display: block;
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
     border: 1px solid var(--gold-dim);
     background: var(--panel);
     padding: 4px;
     line-height: 0;
   }
-  .gallery img {
+  .gallery .slide {
     display: block;
     width: 100%;
-    height: 260px;
+    height: 420px;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
+  .gallery .slide:first-child {
+    position: relative;
+  }
+  .gallery .slide:not(:first-child) {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: 420px;
+  }
+  .gallery .slide.active { opacity: 1; }
   @media (max-width: 600px) {
-    .gallery { grid-template-columns: 1fr; }
     .gallery-section { padding: 0 24px; }
+    .gallery .slide, .gallery .slide:not(:first-child) { height: 300px; }
   }
   footer {
     text-align: center;
@@ -179,12 +189,23 @@
   <section class="gallery-section">
     <div class="gallery-kicker">Recent conversions</div>
     <div class="gallery">
-      <a href="photos/conversion-1.jpg" target="_blank"><img src="photos/conversion-1.jpg" alt="Converted fire helmet, black leather with custom eagle emblem"></a>
-      <a href="photos/conversion-2.jpg" target="_blank"><img src="photos/conversion-2.jpg" alt="Converted fire helmet, glossy black finish on display stand"></a>
-      <a href="photos/conversion-3.jpg" target="_blank"><img src="photos/conversion-3.jpg" alt="Converted fire helmet, red with San Diego department shield"></a>
-      <a href="photos/conversion-4.jpg" target="_blank"><img src="photos/conversion-4.jpg" alt="Two converted helmets showing new brass band and headliner interior"></a>
+      <img class="slide active" src="photos/conversion-3.jpg" alt="Converted fire helmet, red with San Diego department shield">
+      <img class="slide" src="photos/conversion-4.jpg" alt="Two converted helmets showing new brass band and headliner interior">
     </div>
   </section>
+  <script>
+    (function() {
+      var slides = document.querySelectorAll('.gallery .slide');
+      var i = 0;
+      if (slides.length > 1) {
+        setInterval(function() {
+          slides[i].classList.remove('active');
+          i = (i + 1) % slides.length;
+          slides[i].classList.add('active');
+        }, 3500);
+      }
+    })();
+  </script>
 
   <div class="form-frame">
     <iframe src="https://docs.google.com/forms/d/1unYGV93CT4JsJYkD8gRHaaN9J84QGzNodvD7GVnR-Lc/viewform?embedded=true">Loading…</iframe>
