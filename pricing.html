@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Pablo Leather Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bevan&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --panel: #151513;
+    --gold: #d4af37;
+    --gold-dim: #8f7526;
+    --red: #ab2328;
+    --navy: #2c3560;
+    --cream: #f0e9da;
+    --muted: #a89f8c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+  .flag-rule {
+    height: 4px;
+    background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--cream) 40px 42px, var(--navy) 42px 82px, var(--cream) 82px 84px);
+    opacity: 0.85;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 60px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .wordmark {
+    font-family: 'Yellowtail', cursive;
+    font-size: 40px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    opacity: 0.75;
+    font-weight: 400;
+  }
+  nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+  .page-hero {
+    padding: 70px 60px 10px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Bevan', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .body-copy {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .body-copy b { color: var(--cream); font-weight: 400; }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 60px 20px;
+  }
+  .section-title {
+    font-family: 'Bevan', serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin: 56px 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--gold-dim);
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .price-card {
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+    padding: 26px 22px 22px;
+    text-align: center;
+  }
+  .price-card.popular {
+    border-color: var(--red);
+    position: relative;
+  }
+  .tier-name {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .price {
+    font-family: 'Bevan', serif;
+    font-size: 34px;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .price .starting {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .popular-badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--cream);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    margin: 6px 0 14px;
+  }
+  .price-card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 14px;
+  }
+  .price-card li {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 6px 0 6px 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .price-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--gold-dim);
+  }
+  .simple-list {
+    border: 1px solid var(--gold-dim);
+    background: var(--panel);
+  }
+  .simple-list .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 22px;
+    font-size: 15px;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(143,117,38,0.25);
+  }
+  .simple-list .row:last-child { border-bottom: none; }
+  .simple-list .row span:last-child { color: var(--cream); }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  .notice {
+    margin-top: 22px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--red);
+    background: var(--panel);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .notice b { color: var(--cream); font-weight: 400; }
+  .notice-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .notice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .cta {
+    display: inline-block;
+    padding: 16px 42px;
+    background: var(--red);
+    color: var(--cream);
+    font-family: 'Bevan', serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid var(--gold-dim);
+  }
+  .cta-row {
+    text-align: center;
+    margin: 60px 0 20px;
+  }
+  footer {
+    text-align: center;
+    padding: 34px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--gold-dim);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  @media (max-width: 700px) {
+    .price-grid, .notice-grid, .two-col { grid-template-columns: 1fr; }
+    header { padding: 22px 24px; }
+    nav a { margin-left: 18px; }
+    .page-hero, main { padding-left: 24px; padding-right: 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="flag-rule"></div>
+  <header>
+    <a class="wordmark" href="index.html">Pablo Leather Co.</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work-order.html">Helmet restoration</a>
+      <a href="helmet-conversions.html">Conversions</a>
+      <a href="custom-shields.html">Shields</a>
+      <a href="pricing.html" class="active">Pricing</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="kicker">Pricing</div>
+    <h1>Straightforward pricing for every job.</h1>
+    <p class="body-copy">
+      Every price below is a starting point — final cost depends on your helmet's condition, the details you
+      choose, and any add-ons. I'll always confirm design, color, and total price with you before starting any
+      work.
+    </p>
+  </section>
+
+  <main>
+    <div class="section-title">Custom shields</div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tier-name">Basic</div>
+        <div class="price">$180</div>
+        <ul>
+          <li>Standard shield shape</li>
+          <li>Traditional layout</li>
+          <li>Up to 3 paint colors</li>
+          <li>Name &amp; company lettering</li>
+          <li>Protective finish</li>
+        </ul>
+      </div>
+      <div class="price-card popular">
+        <div class="tier-name">Custom</div>
+        <div class="price">$200</div>
+        <div class="popular-badge">Most popular</div>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>Reflective included</li>
+          <li>Enhanced detail work</li>
+          <li>Custom layout options</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier-name">Premium</div>
+        <div class="price">$220</div>
+        <ul>
+          <li>Everything in Custom</li>
+          <li>Custom shield shape included</li>
+          <li>Fully custom artwork layout</li>
+          <li>Advanced paint &amp; detail work</li>
+          <li>Display-quality finish</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">Helmet restoration</div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tier-name">Refinish</div>
+        <div class="price">$280</div>
+        <ul>
+          <li>For helmets needing a fresh start</li>
+          <li>Strip &amp; repaint</li>
+          <li>New hardware</li>
+        </ul>
+      </div>
+      <div class="price-card popular">
+        <div class="tier-name">Full Restoration</div>
+        <div class="price"><span class="starting">Starting at</span>$450</div>
+        <div class="popular-badge">Most popular</div>
+        <ul>
+          <li>Restore your helmet inside and out</li>
+          <li>Refinish &amp; brass polish</li>
+          <li>New liner</li>
+          <li>New brass shield holders</li>
+          <li>Suspension rebuild</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier-name">Premium Restoration</div>
+        <div class="price"><span class="starting">Starting at</span>$550</div>
+        <ul>
+          <li>For heavily worn or damaged helmets</li>
+          <li>Everything in Full Restoration</li>
+          <li>Fill gaps &amp; large cracks</li>
+          <li>Structural leather repairs</li>
+          <li>Major reshaping &amp; restoration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">Brass band conversions</div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="tier-name">Basic Brass Band Conversion</div>
+        <div class="price"><span class="starting">Starting at</span>$350</div>
+        <ul>
+          <li>Brass band install</li>
+          <li>Brass studs for mounting shield</li>
+          <li>Supplied eagle</li>
+          <li>In-house deep suspension</li>
+          <li>Ragtop liner</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier-name">Custom Conversion</div>
+        <div class="price"><span class="starting">Starting at</span>$450</div>
+        <ul>
+          <li>Basic conversion plus:</li>
+          <li>Custom paint work</li>
+          <li>Retro brass / carved eagle upgrade</li>
+          <li>Reflective name &amp; tetrahedrons</li>
+          <li>Leather chinstrap</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier-name">Premium New Build</div>
+        <div class="price"><span class="starting">Starting at</span>$650</div>
+        <ul>
+          <li>Custom conversion plus:</li>
+          <li>Brand new 880 shell</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">Chinstraps</div>
+    <div class="simple-list">
+      <div class="row"><span>Standard custom chinstrap</span><span>$40</span></div>
+      <div class="row"><span>Custom stamped chinstrap</span><span>$50</span></div>
+    </div>
+
+    <div class="section-title">Add-ons</div>
+    <div class="simple-list two-col">
+      <div>
+        <div class="row"><span>Reflective</span><span>$10</span></div>
+        <div class="row"><span>Custom shape upgrade</span><span>$20</span></div>
+        <div class="row"><span>Gold / silver accents</span><span>$20</span></div>
+        <div class="row"><span>Name panel</span><span>$10</span></div>
+      </div>
+      <div>
+        <div class="row"><span>Flapless headliner</span><span>$100</span></div>
+        <div class="row"><span>Deep suspension webbing</span><span>$80</span></div>
+        <div class="row"><span>Rib shaving (excess leather)</span><span>$80</span></div>
+        <div class="row"><span>Epoxy repairs</span><span>$60/hr</span></div>
+      </div>
+    </div>
+
+    <div class="notice-grid">
+      <div class="notice">
+        <div class="notice-title">Order information</div>
+        50% deposit required on orders over $250.<br>
+        Customer-approved proof before production.<br>
+        Lead times vary based on workload.<br>
+        Shipping available nationwide.
+      </div>
+      <div class="notice">
+        <div class="notice-title">Department discounts</div>
+        Available on multi-shield orders.<br>
+        4 shields+ — contact for pricing.<br>
+        Company orders welcome.
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta" href="work-order.html">Submit an order</a>
+    </div>
+  </main>
+
+  <div class="flag-rule"></div>
+  <footer>
+    Email: <a href="mailto:ryan@pabloleather.com">ryan@pabloleather.com</a> &nbsp;·&nbsp;
+    Instagram: <a href="https://instagram.com/pablo.leather.co">@pablo.leather.co</a> &nbsp;·&nbsp;
+    A phone number is shared after we've talked through your order.
+  </footer>
+</body>
+</html>
