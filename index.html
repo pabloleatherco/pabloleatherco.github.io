@@ -68,12 +68,18 @@
     height: auto;
   }
   .kicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     font-size: 13px;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 20px;
   }
+  .kicker-dot { opacity: 0.6; }
   h1 {
     font-family: 'Bevan', serif;
     font-size: 54px;
@@ -188,6 +194,8 @@
     .sub { font-size: 16px; }
     .tiles { flex-direction: column; }
     .cta-menu { min-width: 90vw; max-width: 320px; }
+    .kicker { flex-direction: column; gap: 4px; letter-spacing: 3px; font-size: 11px; }
+    .kicker-dot { display: none; }
   }
 </style>
 </head>
@@ -206,7 +214,7 @@
 
   <section class="hero">
     <div class="badge"><img src="pablo-leather-logo.png" alt="Pablo Leather Co. - Shields and Helmet Restoration"></div>
-    <div class="kicker">Fire service leatherwork &nbsp;·&nbsp; Handcrafted since day one</div>
+    <div class="kicker"><span>Fire service leatherwork</span><span class="kicker-dot">·</span><span>Handcrafted since day one</span></div>
     <h1>Built by hand<br><em>Worn</em> <em>on duty</em></h1>
     <p class="sub">Traditional leather work for fire helmets — repairs, brass band conversions, and hand-cut shields, made the way it's always been done.</p>
     <div class="cta-wrap">
