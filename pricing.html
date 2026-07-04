@@ -222,10 +222,51 @@
     letter-spacing: 1px;
     text-decoration: none;
     border: 1px solid var(--gold-dim);
+    cursor: pointer;
+    text-transform: uppercase;
   }
   .cta-row {
     text-align: center;
     margin: 60px 0 20px;
+  }
+  .cta-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .cta-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    min-width: 260px;
+    background: var(--panel);
+    border: 1px solid var(--gold-dim);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 20;
+    text-align: left;
+  }
+  .cta-menu.open { display: block; }
+  .cta-menu a {
+    display: block;
+    padding: 16px 22px;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--gold-dim);
+    text-transform: uppercase;
+  }
+  .cta-menu a:last-child { border-bottom: none; }
+  .cta-menu a:hover { background: #1c1c19; color: var(--gold); }
+  .cta-menu a span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
   }
   footer {
     text-align: center;
@@ -244,6 +285,7 @@
     nav a { margin: 0 10px; }
     .page-hero, main { padding-left: 24px; padding-right: 24px; }
     h1 { font-size: 32px; }
+    .cta-menu { min-width: 90vw; max-width: 320px; }
   }
 </style>
 </head>
@@ -418,7 +460,14 @@
     </div>
 
     <div class="cta-row">
-      <a class="cta" href="work-order.html">Submit an order</a>
+      <div class="cta-wrap">
+        <button class="cta" id="orderBtn" type="button">Submit an order</button>
+        <div class="cta-menu" id="orderMenu">
+          <a href="work-order.html">Helmet Restoration<span>Repairs &amp; reconditioning</span></a>
+          <a href="helmet-conversions.html">Helmet Conversion<span>Brass band conversions, new builds</span></a>
+          <a href="custom-shields.html">Custom Shield<span>Hand-cut leather shields</span></a>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -428,5 +477,22 @@
     Instagram: <a href="https://instagram.com/pablo.leather.co">@pablo.leather.co</a> &nbsp;·&nbsp;
     A phone number is shared after we've talked through your order.
   </footer>
+  <script>
+    (function() {
+      var btn = document.getElementById('orderBtn');
+      var menu = document.getElementById('orderMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+      });
+      document.addEventListener('click', function() {
+        menu.classList.remove('open');
+      });
+      menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    })();
+  </script>
 </body>
 </html>
