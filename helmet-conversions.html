@@ -31,9 +31,14 @@
     font-weight: 300;
   }
   .flag-rule {
-    height: 4px;
-    background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--cream) 40px 42px, var(--navy) 42px 82px, var(--cream) 82px 84px);
-    opacity: 0.85;
+    height: 6px;
+    background-image:
+      linear-gradient(var(--navy), var(--navy)),
+      repeating-linear-gradient(90deg, var(--red) 0 10px, var(--cream) 10px 20px);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, 70px top;
+    background-size: 70px 100%, calc(100% - 70px) 100%;
+    opacity: 0.92;
   }
   header {
     display: flex;
