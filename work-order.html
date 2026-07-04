@@ -59,7 +59,20 @@
   }
   nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
   .page-hero {
-    padding: 70px 60px 20px;
+    position: relative;
+    padding: 90px 60px 60px;
+    background-image: url('photos/bg-restoration.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.85) 70%, rgba(10,10,10,0.95) 100%);
+  }
+  .page-hero-inner {
+    position: relative;
     max-width: 760px;
     margin: 0 auto;
   }
@@ -69,18 +82,21 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   h1 {
     font-family: 'Bevan', serif;
     font-size: 42px;
     line-height: 1.2;
     margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.85);
   }
   .body-copy {
     font-size: 16px;
     font-weight: 300;
-    color: var(--muted);
+    color: var(--cream);
     line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   .body-copy b { color: var(--cream); font-weight: 400; }
   .form-frame {
@@ -111,7 +127,7 @@
     .wordmark { font-size: 32px; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 10px; }
-    .page-hero { padding: 50px 24px 20px; }
+    .page-hero { padding: 60px 24px 40px; }
     h1 { font-size: 32px; }
   }
 </style>
@@ -131,15 +147,17 @@
   </header>
 
   <section class="page-hero">
-    <div class="kicker">Helmet restoration</div>
-    <h1>Get your Lid back in service.</h1>
-    <p class="body-copy">
-      If your helmet's leather is worn, torn, or just needs a refresh, submit a work order below.
-      Choose a restoration level — <b>Refinish</b>, <b>Full Restoration</b>, or <b>Premium Restoration</b> —
-      and add any of the following if you need them: a chinstrap, flapless headliner, deep suspension webbing,
-      rib shaving, or epoxy repairs. Not sure which level your helmet needs? Pick "Not sure — need advice"
-      and I'll follow up with a recommendation.
-    </p>
+    <div class="page-hero-inner">
+      <div class="kicker">Helmet restoration</div>
+      <h1>Get your Lid back in service.</h1>
+      <p class="body-copy">
+        If your helmet's leather is worn, torn, or just needs a refresh, submit a work order below.
+        Choose a restoration level — <b>Refinish</b>, <b>Full Restoration</b>, or <b>Premium Restoration</b> —
+        and add any of the following if you need them: a chinstrap, flapless headliner, deep suspension webbing,
+        rib shaving, or epoxy repairs. Not sure which level your helmet needs? Pick "Not sure — need advice"
+        and I'll follow up with a recommendation.
+      </p>
+    </div>
   </section>
 
   <div class="form-frame">

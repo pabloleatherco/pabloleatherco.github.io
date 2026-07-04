@@ -59,7 +59,20 @@
   }
   nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
   .page-hero {
-    padding: 70px 60px 20px;
+    position: relative;
+    padding: 90px 60px 60px;
+    background-image: url('photos/bg-shield.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.85) 70%, rgba(10,10,10,0.95) 100%);
+  }
+  .page-hero-inner {
+    position: relative;
     max-width: 760px;
     margin: 0 auto;
   }
@@ -69,18 +82,21 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   h1 {
     font-family: 'Bevan', serif;
     font-size: 42px;
     line-height: 1.2;
     margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.85);
   }
   .body-copy {
     font-size: 16px;
     font-weight: 300;
-    color: var(--muted);
+    color: var(--cream);
     line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   .body-copy b { color: var(--cream); font-weight: 400; }
   .form-frame {
@@ -111,7 +127,7 @@
     .wordmark { font-size: 32px; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 10px; }
-    .page-hero { padding: 50px 24px 20px; }
+    .page-hero { padding: 60px 24px 40px; }
     h1 { font-size: 32px; }
   }
 </style>
@@ -131,16 +147,18 @@
   </header>
 
   <section class="page-hero">
-    <div class="kicker">Custom shields</div>
-    <h1>100% hand crafted shields from start to finish</h1>
-    <p class="body-copy">
-      Every shield is hand-cut and finished to order. Choose a package — <b>Basic</b>, <b>Custom</b>, or
-      <b>Premium</b> — and add on any of the following: custom shape upgrade, reflective trim, gold/silver
-      accents, or a name panel. Shields carry your department or company name, plus whatever text and numbers
-      you need — company number, rank, last name, and more. Not sure which package fits? Pick "Not sure yet"
-      and I'll follow up. Submit a shield order with the details and any reference images, and I'll follow up
-      to confirm design, color, and price before starting.
-    </p>
+    <div class="page-hero-inner">
+      <div class="kicker">Custom shields</div>
+      <h1>100% hand crafted shields from start to finish</h1>
+      <p class="body-copy">
+        Every shield is hand-cut and finished to order. Choose a package — <b>Basic</b>, <b>Custom</b>, or
+        <b>Premium</b> — and add on any of the following: custom shape upgrade, reflective trim, gold/silver
+        accents, or a name panel. Shields carry your department or company name, plus whatever text and numbers
+        you need — company number, rank, last name, and more. Not sure which package fits? Pick "Not sure yet"
+        and I'll follow up. Submit a shield order with the details and any reference images, and I'll follow up
+        to confirm design, color, and price before starting.
+      </p>
+    </div>
   </section>
 
   <div class="form-frame">

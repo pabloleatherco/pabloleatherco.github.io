@@ -158,26 +158,46 @@
     margin-top: 60px;
   }
   .tile {
+    position: relative;
     flex: 1;
-    background: var(--panel);
-    padding: 50px 36px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--panel);
+    background-size: cover;
+    background-position: center;
+    padding: 30px 32px 32px;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    display: block;
+    transition: filter 0.25s ease;
   }
-  .tile:hover { background: #1c1c19; }
+  .tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.28) 0%, rgba(10,10,10,0.62) 55%, rgba(10,10,10,0.9) 100%);
+  }
+  .tile:hover { filter: brightness(1.15); }
+  .tile-restoration { background-image: url('photos/bg-restoration.jpg'); }
+  .tile-conversion { background-image: url('photos/bg-conversion.jpg'); }
+  .tile-shield { background-image: url('photos/bg-shield.jpg'); }
   .tile h3 {
+    position: relative;
     font-family: 'Bevan', serif;
     font-size: 20px;
     color: var(--gold);
     margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   .tile p {
+    position: relative;
     font-size: 14px;
-    color: var(--muted);
+    color: var(--cream);
     line-height: 1.6;
     font-weight: 300;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   footer {
     text-align: center;
@@ -197,6 +217,7 @@
     h1 { font-size: 36px; }
     .sub { font-size: 16px; }
     .tiles { flex-direction: column; }
+    .tile { min-height: 200px; }
     .cta-menu { min-width: 90vw; max-width: 320px; }
     .kicker { flex-direction: column; gap: 4px; letter-spacing: 3px; font-size: 11px; }
     .kicker-dot { display: none; }
@@ -233,15 +254,15 @@
   </section>
 
   <section class="tiles">
-    <a class="tile" href="work-order.html">
+    <a class="tile tile-restoration" href="work-order.html">
       <h3>Helmet restoration</h3>
       <p>Repairs, reconditioning, and chinstraps for your current helmet.</p>
     </a>
-    <a class="tile" href="helmet-conversions.html">
+    <a class="tile tile-conversion" href="helmet-conversions.html">
       <h3>Helmet conversions</h3>
       <p>Brass band conversions, Basic to Premium New Build.</p>
     </a>
-    <a class="tile" href="custom-shields.html">
+    <a class="tile tile-shield" href="custom-shields.html">
       <h3>Custom shields</h3>
       <p>Hand-cut, hand-painted leather shields.</p>
     </a>

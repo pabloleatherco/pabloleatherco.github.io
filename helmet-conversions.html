@@ -60,7 +60,20 @@
   }
   nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
   .page-hero {
-    padding: 70px 60px 20px;
+    position: relative;
+    padding: 90px 60px 60px;
+    background-image: url('photos/bg-conversion.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.85) 70%, rgba(10,10,10,0.95) 100%);
+  }
+  .page-hero-inner {
+    position: relative;
     max-width: 760px;
     margin: 0 auto;
   }
@@ -70,18 +83,21 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   h1 {
     font-family: 'Bevan', serif;
     font-size: 42px;
     line-height: 1.2;
     margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.85);
   }
   .body-copy {
     font-size: 16px;
     font-weight: 300;
-    color: var(--muted);
+    color: var(--cream);
     line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
   }
   .body-copy b { color: var(--cream); font-weight: 400; }
   .notice {
@@ -153,7 +169,7 @@
     .wordmark { font-size: 32px; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 10px; }
-    .page-hero { padding: 50px 24px 20px; }
+    .page-hero { padding: 60px 24px 40px; }
     h1 { font-size: 32px; }
     .gallery-section { padding: 0 24px; }
     .gallery .slide, .gallery .slide:not(:first-child) { height: 300px; }
@@ -184,19 +200,21 @@
   </header>
 
   <section class="page-hero">
-    <div class="kicker">Helmet conversions</div>
-    <h1>Cairns Style Brass Band Conversion</h1>
-    <p class="body-copy">
-      <b>The comfort of your traditional leather helmet without the weight.</b>
-      A conversion changes how your helmet's brass hardware is built rather than just repairing what's there.
-      Choose a package — Basic Brass Band Conversion, Custom Conversion, or Premium New Build —
-      or pick "Not sure — need advice" and I'll help you land on the right one. Submit a conversion order below
-      with a photo of your current helmet and, if you have one, a reference photo of the style you're after.
-    </p>
-    <div class="notice">
-      One note up front: if your helmet is OSHA-compliant, it can't be converted to NFPA compliance after the
-      fact — that rating is fixed at original certification. I'll flag this during review if it applies to your
-      order, but it helps to know going in.
+    <div class="page-hero-inner">
+      <div class="kicker">Helmet conversions</div>
+      <h1>Cairns Style Brass Band Conversion</h1>
+      <p class="body-copy">
+        <b>The comfort of your traditional leather helmet without the weight.</b>
+        A conversion changes how your helmet's brass hardware is built rather than just repairing what's there.
+        Choose a package — Basic Brass Band Conversion, Custom Conversion, or Premium New Build —
+        or pick "Not sure — need advice" and I'll help you land on the right one. Submit a conversion order below
+        with a photo of your current helmet and, if you have one, a reference photo of the style you're after.
+      </p>
+      <div class="notice">
+        One note up front: if your helmet is OSHA-compliant, it can't be converted to NFPA compliance after the
+        fact — that rating is fixed at original certification. I'll flag this during review if it applies to your
+        order, but it helps to know going in.
+      </div>
     </div>
   </section>
 
